@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!--继承pigx-visual-->
+	<parent>
+		<groupId>com.pig4cloud</groupId>
+		<artifactId>pigx-visual</artifactId>
+		<version>3.2</version>
+	</parent>
+	<!--<groupId>com.pig4cloud</groupId>-->
+	<artifactId>pigx-demo</artifactId>
+	<!--<version>0.0.1-SNAPSHOT</version>-->
+	<!--<name>pigx-demo</name>-->
+	<packaging>jar</packaging>
+
+	<description>演示工程</description>
+
+	<!--<properties><java.version>1.8</java.version></properties>-->
+
+	<dependencies>
+		<!--必须：nacos注册中心客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		<!--必须：nacos配置中心客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		<!--必备：spring-boot web 模块-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--是否需要：undertow容器，灵活的高性能Web服务器，提供包括阻塞和基于NIO的非阻塞机制-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+		<!--是否需要：代码生成模板引擎-->
+		<dependency>
+			<artifactId>velocity</artifactId>
+			<groupId>org.apache.velocity</groupId>
+			<version>${velocity.version}</version>
+		</dependency>
+		<!--必备：pigx数据操作-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pigx-common-data</artifactId>
+		</dependency>
+		<!--必备：pigx common核心-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pigx-common-core</artifactId>
+		</dependency>
+		<!--必备：pigx安全模块-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pigx-common-security</artifactId>
+		</dependency>
+		<!--必备：pigx日志-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pigx-common-log</artifactId>
+		</dependency>
+		<!--推荐：pigx swagger api调试接入-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pigx-common-swagger</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!--默认：spring-boot热部署-->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<!--推荐：帮助我们在Maven工程中，通过简单的配置，自动生成镜像并推送到仓库中。-->
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
