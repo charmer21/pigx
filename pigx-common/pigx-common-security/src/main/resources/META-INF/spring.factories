@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.springframework.cloud.openfeign.PigxHystrixFeignTargeterConfiguration,\
+  com.pig4cloud.pigx.common.security.component.GlobalExceptionHandlerResolver,\
+  com.pig4cloud.pigx.common.security.service.PigxUserDetailsServiceImpl

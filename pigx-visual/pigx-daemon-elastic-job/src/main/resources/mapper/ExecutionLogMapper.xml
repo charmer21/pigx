@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pig4cloud.pigx.daemon.elastic.mapper.ExecutionLogMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.pig4cloud.pigx.daemon.elastic.entity.ExecutionLog" id="executionLogMap">
+        <id property="id" column="id"/>
+        <result property="jobName" column="job_name"/>
+        <result property="taskId" column="task_id"/>
+        <result property="hostname" column="hostname"/>
+        <result property="ip" column="ip"/>
+        <result property="shardingItem" column="sharding_item"/>
+        <result property="executionSource" column="execution_source"/>
+        <result property="failureCause" column="failure_cause"/>
+        <result property="isSuccess" column="is_success"/>
+        <result property="startTime" column="start_time"/>
+        <result property="completeTime" column="complete_time"/>
+    </resultMap>
+</mapper>
